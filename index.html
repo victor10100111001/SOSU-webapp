@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Care Access</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Care Access</h1>
+
+    <div class="card">
+        <div class="info">
+            <label for="navn">Navn</label>
+            <input type="text" id="navn" placeholder="Navn" />
+
+            <label for="alder">Alder</label>
+            <input type="text" id="alder" placeholder="Alder" />
+
+            <label for="cprnummer">Cprnummer</label>
+            <input type="text" id="cprnummer" placeholder="Cprnummer" />
+        </div>
+        <label for="valgtbillede" class="image-preview">
+            <img id="billedevis"/>
+        </label>
+        <input type="file" id="valgtbillede" accept="image/*" onchange="VisBillede(event)" style="display: none;">
+    </div>
+
+    <label for="patientjournal">Patientjournal</label><br>
+    <textarea id="patientjournal"></textarea><br>
+
+    <label for="sygdomsinformation">Sygdomsinformation</label><br>
+    <textarea id="sygdomsinformation"></textarea><br>
+
+    <div class="pilleliste">
+        <div class="pille">
+            <h3>Paracetamol</h3>
+            <button class="pillbutton" onclick="ændreAntal(this, 1)">+</button>
+            <div class="pillcount" id="pille1">0</div>
+            <button class="pillbutton" onclick="ændreAntal(this, -1)">-</button>
+        </div>
+        <div class="pille">
+            <h3>Enalapril</h3>
+            <button class="pillbutton" onclick="ændreAntal(this, 1)">+</button>
+            <div class="pillcount" id="pille2">0</div>
+            <button class="pillbutton" onclick="ændreAntal(this, -1)">-</button>
+        </div>
+        <div class="pille">
+            <h3>Moxonidin</h3>
+            <button class="pillbutton" onclick="ændreAntal(this, 1)">+</button>
+            <div class="pillcount" id="pille3">0</div>
+            <button class="pillbutton" onclick="ændreAntal(this, -1)">-</button>
+        </div>
+    </div>
+
+    <hr>
+
+    <button onclick="UploadPatientInfo()">Upload Patient Info</button>
+
+    <script src="index.js"></script>
+</body>
+</html>
